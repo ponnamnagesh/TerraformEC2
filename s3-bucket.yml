@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  tasks:
-    - name: Create S3 bucket
-      s3_bucket:
-        name: nageshbucketaws223456
-        state: present
