@@ -24,6 +24,7 @@ pipeline {
                 echo "Terraform action is --> ${action}"
                 //sh ('terraform ${action} --auto-approve') 
                 sh ('terraform apply --auto-approve') 
+                sh ('terraform destroy --auto-approve')
            }
         }
     }
