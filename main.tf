@@ -44,11 +44,11 @@ resource "aws_instance" "JenkinsSlave" {
   tags = {
     # The count.index allows you to launch a resource 
     # starting with the distinct index number 0 and corresponding to this instance.
-    Name = "JenkinsSlave-${count.index}"
+    Name = var.aws_instance.JenkinsSlave-${count.index}
   }
   #tags= {
-    Name = var.tag_name
-  }
+   # Name = var.tag_name
+  #}
 }
 
 # Create Elastic IP address
