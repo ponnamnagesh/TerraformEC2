@@ -8,7 +8,10 @@ pipeline {
 
           }
         }
-        
+         stage ("Terraform Format") {
+            steps {
+                sh ('terraform fmt -check') 
+            }
         stage ("Terraform Init") {
             steps {
                 sh ('terraform init') 
