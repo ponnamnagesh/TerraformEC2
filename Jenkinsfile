@@ -7,11 +7,6 @@ pipeline {
             checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ponnamnagesh/TerraformEC2']]])            
 
           }
-        }
-         stage ("Terraform Format") {
-            steps {
-                sh ('terraform fmt -check -diff') 
-            }
         }    
         stage ("Terraform Init") {
             steps {
