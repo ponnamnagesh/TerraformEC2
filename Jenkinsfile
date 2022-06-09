@@ -9,12 +9,12 @@ pipeline {
           }
         }
         
-        stage ("Terraform init") {
+        stage ("Terraform Init") {
             steps {
                 sh ('terraform init') 
             }
         }
-        stage ("Terraform plan") {
+        stage ("Terraform Plan") {
             steps {
                 sh ('terraform plan') 
             }
