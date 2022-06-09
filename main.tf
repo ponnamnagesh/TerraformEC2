@@ -44,7 +44,7 @@ resource "aws_instance" "JenkinsSlave" {
   tags = {
     # The count.index allows you to launch a resource 
     # starting with the distinct index number 0 and corresponding to this instance.
-    Name = "my-machine-${count.index}"
+    Name = "JenkinsSlave-${count.index}"
   }
 }
 
