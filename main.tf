@@ -41,7 +41,7 @@ resource "aws_instance" "JenkinsSlave" {
   #key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
-  tags = {
+  #tags = {
     # The count.index allows you to launch a resource 
     # starting with the distinct index number 0 and corresponding to this instance.
     Name = var.aws_instance.JenkinsSlave-${count.index}
