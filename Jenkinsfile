@@ -9,22 +9,22 @@ pipeline {
           }
         }
         
-        stage ("terraform init") {
+        stage ("Terraform init") {
             steps {
                 sh ('terraform init') 
             }
         }
-        stage ("terraform plan") {
+        stage ("Terraform plan") {
             steps {
                 sh ('terraform plan') 
             }
         }
-        stage ("terraform Action") {
+        stage ("Terraform Action") {
             steps {
                 echo "Terraform action is --> ${action}"
-                //sh ('terraform ${action} --auto-approve') 
+                sh ('terraform ${action} --auto-approve') 
                 //sh ('terraform apply --auto-approve') 
-                sh ('terraform destroy --auto-approve')
+                //sh ('terraform destroy --auto-approve')
            }
         }
     }
