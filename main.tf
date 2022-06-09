@@ -36,12 +36,15 @@ resource "aws_security_group" "my_security_group" {
 
 # Create AWS ec2 instance
 resource "aws_instance" "JenkinsSlave" {
+  count = 4 
   ami           = var.ami_id
   #key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
-  tags= {
-    Name = var.tag_name
+  tags = {
+    # The count.index allows you to launch a resource 
+    # starting with the distinct index number 0 and corresponding to this instance.
+    Name = "my-machine-${count.index}"
   }
 }
 
