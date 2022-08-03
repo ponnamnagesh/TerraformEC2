@@ -56,7 +56,7 @@ resource "aws_instance" "JenkinsSlave" {
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
   #instance = aws_instance.JenkinsSlave.id
-  instance = aws_instance.JenkinsSlave[count.index]
+  #instance = aws_instance.JenkinsSlave[count.index]
 tags= {
     Name = "my_elastic_ip"
   }
