@@ -46,9 +46,9 @@ resource "aws_instance" "JenkinsSlave" {
     # starting with the distinct index number 0 and corresponding to this instance.
   Name = var.aws_instance.JenkinsSlave-${count.index}
   }
-  tags= {
-   Name = var.tag_name
-  }
+  #tags= {
+  # Name = var.tag_name
+  #}
 }
 
 # Create Elastic IP address
